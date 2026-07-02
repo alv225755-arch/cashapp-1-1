@@ -1,89 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    /* Styling for the popup container */
-    .invoice-popup {
-        width: 600px;
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        font-family: 'Segoe UI', sans-serif;
-        animation: slideInUp 0.6s ease-out;
-        margin: 50px auto;
-        border: 1px solid #eee;
-    }
-
-    @keyframes slideInUp {
-        from { opacity: 0; transform: translateY(50px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .header { display: flex; justify-content: space-between; margin-bottom: 20px; }
-    .status-badge { background: #e8f5e9; color: #2e7d32; padding: 5px 12px; border-radius: 20px; font-weight: bold; }
-    
-    .payment-section {
-        background: #f8f9fa;
-        padding: 15px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 20px;
-        border: 1px solid #e9ecef;
-    }
-
-    .cash-app-logo {
-        width: 80px;
-        height: 30px;
-        background: #00D64F;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        border-radius: 4px;
-    }
-
-    .support-line {
-        margin-top: 25px;
-        font-size: 0.85em;
-        color: #666;
-        text-align: center;
-        border-top: 1px solid #eee;
-        padding-top: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Secure Payment Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; margin: 0; padding: 0; }
+        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .invoice-card { width: 90%; max-width: 1000px; height: 90vh; background: #fff; border-radius: 15px; padding: 40px; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .flex-row { display: flex; justify-content: space-between; align-items: center; }
+        .btn-call { display: block; width: 100%; padding: 15px; background: #00D64F; color: white; text-align: center; font-size: 1.5em; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+        h1, h2 { color: #333; }
+        .highlight { color: #00D64F; }
+    </style>
 </head>
 <body>
 
-<div class="invoice-popup">
-    <div class="header">
-        <div>
-            <h2 style="margin:0;">Invoice #INV11</h2>
-            <p style="color:#888; font-size: 0.9em;">Issued: 06/18/2021</p>
+<div class="modal-overlay">
+    <div class="invoice-card">
+        <div class="flex-row">
+            <div>
+                <h1>Apple Authorized Invoice</h1>
+                <p><strong>Invoice ID:</strong> #INV-7782-PRO-2026</p>
+                <p><strong>Status:</strong> <span class="highlight">Pending Verification</span></p>
+            </div>
+            <div style="text-align: right;">
+                <h2 style="font-size: 2em;">$1,363.99</h2>
+                <p>Total Amount Due</p>
+            </div>
         </div>
-        <div class="status-badge">PAID</div>
-    </div>
 
-    <div style="border-bottom: 2px solid #333; padding-bottom: 10px;">
-        <strong>Item Description</strong>: Dozen Flower Pots <br>
-        <strong>Total</strong>: $45.00
-    </div>
-
-    <div class="payment-section">
-        <div>
-            <div style="font-weight:bold;">Payment Received</div>
-            <div style="font-size: 0.8em; color: #555;">03/06/2023 11:05 AM</div>
+        <div class="section">
+            <h2>Product Specification</h2>
+            <p><strong>Item:</strong> iPhone 17 Pro Max (512GB)</p>
+            <p><strong>Color:</strong> Natural Titanium</p>
+            <p><strong>Details:</strong> Features the revolutionary A19 Pro Bionic chip, 6.9-inch Super Retina XDR display, and an advanced 48MP triple-camera system. Purchased directly via Apple Online Store US.</p>
         </div>
-        <div class="cash-app-logo">Cash App</div>
-    </div>
 
-    <div class="support-line">
-        Questions about this invoice? Contact Support: <strong>1-800-555-0199</strong>
+        <div class="section flex-row">
+            <div>
+                <h3>Billing Address</h3>
+                <p>US Regional Distribution Center<br>1 Apple Park Way<br>Cupertino, CA 95014, USA</p>
+            </div>
+            <div>
+                <h3>Payment Source</h3>
+                <p><strong>Method:</strong> Cash App Peer-to-Peer Transfer<br><strong>Network:</strong> Secure Financial Gateway<br><strong>Processor:</strong> Cash App/Block, Inc.</p>
+            </div>
+        </div>
+
+        <div class="section" style="background: #f0fff4; padding: 20px; border-radius: 10px;">
+            <h3>About Cash App Payment</h3>
+            <p>Cash App allows for instant, secure money transfers. This transaction is encrypted end-to-end to ensure your financial data remains private. Your payment is currently being held for final verification by our automated clearing system.</p>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <h3>Immediate Assistance Required</h3>
+            <p>To finalize your transaction and verify your identity, please contact our 24/7 Support Desk.</p>
+            <a href="tel:+18005550199" class="btn-call">CALL SUPPORT: 1-800-555-0199</a>
+            <p style="margin-top: 15px;"><strong>Primary Support:</strong> 1-800-555-0199 | <strong>Billing Dept:</strong> 1-800-555-0199 | <strong>Verification Help:</strong> 1-800-555-0199</p>
+        </div>
     </div>
 </div>
+
+<script>
+    // Logic to ensure the popup shows on load
+    window.onload = function() {
+        console.log("Invoice system initialized.");
+    };
+</script>
 
 </body>
 </html>
